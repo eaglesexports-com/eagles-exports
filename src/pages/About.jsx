@@ -72,7 +72,7 @@ const About = () => {
     <>
       <div className="about-banner position-relative text-center d-flex align-items-center justify-content-center" style={{ height: '600px', backgroundImage: `url(${require('../assets/images/Aboutus.jpg')})` , backgroundSize: 'cover', backgroundPosition: 'center' }}>
         <div className="overlay position-absolute w-100 h-100" style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }}></div>
-        <h1 className="position-relative text-white display-3 fw-bold">About Banner</h1>
+        <h1 className="position-relative text-white display-3 fw-bold">About Us</h1>
       </div>
 
       <div className="container-xxl py-5">

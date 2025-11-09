@@ -322,7 +322,7 @@ const ingredData=healthIngredients.filter((item)=>Object.values(item).some((val)
     <div className="product-main-list-parent">
       <div className="about-banner position-relative text-center d-flex align-items-center justify-content-center" style={{ height: '600px', backgroundImage: `url(${require('../assets/images/ProductBanner1.jpeg')})`, backgroundSize: 'cover', backgroundPosition: 'bottom' }}>
         <div className="overlay position-absolute w-100 h-100" style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }}></div>
-        <h1 className="position-relative text-white display-3 fw-bold">Product Banner</h1>
+        <h1 className="position-relative text-white display-3 fw-bold">Our Products</h1>
       </div>
       <div className="container py-5">
         <div className="row">

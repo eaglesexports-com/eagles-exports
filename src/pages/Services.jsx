@@ -48,7 +48,7 @@ const Services = () => {
           style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }}
         ></div>
         <h1 className="position-relative text-white display-3 fw-bold">
-          Service Banner
+          Our Services
         </h1>
       </div>
 
