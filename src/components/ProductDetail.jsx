@@ -39,7 +39,7 @@ const ProductDetail = () => {
           <h2 className="section-title text-center mb-4">Products</h2>
           <div className="row mt-5">
             {boxData.map((box, index) => (
-              <div key={box.id} className="col-md-3 mb-4">
+              <div key={box.id} className="col-md-6 mb-4">
                 <motion.div
                   className="card h-100 shadow-sm"
                   whileHover={{ scale: 1.05 }}

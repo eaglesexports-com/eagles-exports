@@ -1,14 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import CountUp from 'react-countup';
+import '../styles/About.css'
 import { useInView } from 'react-intersection-observer';
+import { FaLeaf, FaHandshake, FaShippingFast, FaStar } from "react-icons/fa";
+
 import image1 from '../assets/images/banner1.png';
 import image2 from '../assets/images/banner2.png';
 import image3 from '../assets/images/banner3.png';
 import image4 from '../assets/images/banner4.png';
-import expert1 from '../assets/images/testboi1.jpg';
-import expert2 from '../assets/images/testwoman.png';
-import expert3 from '../assets/images/testboi2.jpg';
-import expert4 from '../assets/images/testwomen2.png';
 
 const About = () => {
   const { ref, inView } = useInView({
@@ -37,36 +36,29 @@ const About = () => {
     ],
   };
 
-  const teamData = [
+ const reasons = [
     {
-      id: 1,
-      img: expert1,
-      name: 'Ethan Davis',
-      designation: 'Aromatherapy Expert',
-      delay: '0.1s',
+      icon: <FaLeaf className="icon green" />,
+      title: "100% Natural Products",
+      desc: "We source only the highest quality herbs and ingredients directly from trusted farms to ensure purity and freshness.",
     },
     {
-      id: 2,
-      img: expert2,
-      name: 'Olivia Martinez',
-      designation: 'Essential Oil Specialist',
-      delay: '0.3s',
+      icon: <FaHandshake className="icon blue" />,
+      title: "Trusted Partnerships",
+      desc: "We build long-term relationships with our clients through transparency, reliability, and unmatched service quality.",
     },
     {
-      id: 3,
-      img: expert3,
-      name: 'Liam Smith',
-      designation: 'Aromatherapy Expert',
-      delay: '0.5s',
+      icon: <FaShippingFast className="icon orange" />,
+      title: "Fast Global Delivery",
+      desc: "With a robust logistics network, we ensure timely and safe delivery of your products worldwide.",
     },
     {
-      id: 4,
-      img: expert4,
-      name: 'Sophia Johnson',
-      designation: 'Essential Oil Specialist',
-      delay: '0.7s',
+      icon: <FaStar className="icon yellow" />,
+      title: "Quality Assurance",
+      desc: "Each product undergoes strict quality checks to meet global export standards and customer expectations.",
     },
   ];
+
 
   return (
     <>
@@ -130,51 +122,24 @@ const About = () => {
               <a className="btn py-3 px-5 mt-2" href="/" style={{background:"#b46c00", color:"white"}}>Read More</a>
             </div>
           </div>
+           <section className="why-section py-5 mt-5">
+      <div className="container">
+        <h2 className="section-title text-center mb-5">
+          Why <span>Choose Us</span>
+        </h2>
+        <div className="row mt-5">
+          {reasons.map((reason, index) => (
+            <div className="col-12 col-md-6 col-lg-3 mb-4" key={index}>
+              <div className="why-card text-center p-4 h-100">
+                {reason.icon}
+                <h4 className="why-title mt-3">{reason.title}</h4>
+                <p className="why-desc">{reason.desc}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
-
-      <div className="container-xxl pt-5 pb-3">
-        <div className="container">
-          <div
-            className="text-center wow fadeInUp"
-            data-wow-delay="0.1s"
-            style={{ visibility: 'visible', animationDelay: '0.1s', animationName: 'fadeInUp' }}
-          >
-            <h5 className="section-title  text-center fw-normal">
-              Meet Our Team
-            </h5>
-            <h1 className="mb-5" style={{ color: 'black' }}>Our Experts</h1>
-          </div>
-
-          <div className="row g-4">
-            {teamData.map((member) => (
-              <div
-                key={member.id}
-                className="col-lg-3 col-md-6 wow fadeInUp"
-                data-wow-delay={member.delay}
-                style={{ visibility: 'visible', animationDelay: member.delay, animationName: 'fadeInUp' }}
-              >
-                <div className="team-item text-center rounded overflow-hidden">
-                  <div className=" overflow-hidden m-4" style={{borderRadius:"25px"}}>
-                    <img className="img-fluid" src={member.img} alt={member.name} />
-                  </div>
-                  <h5 className="mb-0" style={{color:"#FEA116"}}>{member.name}</h5>
-                  <small style={{color:"gray"}}>{member.designation}</small>
-                  <div className="d-flex justify-content-center mt-3">
-                    <a className="btn btn-square btn-primary mx-1" href="">
-                      <i className="fab fa-facebook-f"></i>
-                    </a>
-                    <a className="btn btn-square btn-primary mx-1" href="">
-                      <i className="fab fa-twitter"></i>
-                    </a>
-                    <a className="btn btn-square btn-primary mx-1" href="">
-                      <i className="fab fa-instagram"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+    </section>
         </div>
       </div>
     </>

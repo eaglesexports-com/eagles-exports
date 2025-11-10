@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 const Products = () => {
   const [searchTerm,setSearchTerm]=useState('')
   const [ingredSearch,setingredSearch]=useState('')
+   const [oilSearch, setOilSearch] = useState("");
+  const [extractSearch, setExtractSearch] = useState("");
   const herbsData = [
     { herb1: "Apium Graveoens", botanical1: "AOHnite Ferox", herb2: "Agar", botanical2: "Aquillaria gallocha" },
     { herb1: "Ageda", botanical1: "Achyranthes aspera", herb2: "Ajmod", botanical2: "Apium graveoens" },
@@ -315,8 +317,11 @@ const Products = () => {
     { ingredient: "Green Tea Extract", botanicalName: "Camellia sinensis", partUsed: "Leaf" },
     { ingredient: "Flaxseed Powder", botanicalName: "Linum usitatissimum", partUsed: "Seed" },
   ];
+  
 const filterData= herbsData.filter((item)=>Object.values(item).some((val)=>val.toLowerCase().includes(searchTerm.toLowerCase())))
 const ingredData=healthIngredients.filter((item)=>Object.values(item).some((val)=>val.toLowerCase().includes(ingredSearch.toLowerCase())))
+const oil=oils.filter((item)=>Object.values(item).some((val)=>val.toLowerCase().includes(oilSearch.toLowerCase())))
+const extract=extracts.filter((item)=>Object.values(item).some((val)=>val.toLowerCase().includes(extractSearch.toLowerCase())))
 
   return (
     <div className="product-main-list-parent">
@@ -428,7 +433,11 @@ const ingredData=healthIngredients.filter((item)=>Object.values(item).some((val)
             <div className='text-center mb-4'>  <h2 class="section-title ">Herbal Essential Oils</h2></div>
           </div>
           <div className="col-md-6 mb-4">
-            
+             <input type="text" placeholder='search herb or botanical name...' 
+            className='form-control mb-3'
+            value={oilSearch}
+            onChange={(e)=>setOilSearch(e.target.value)}
+            />
             <div className="table-responsive-scrlbar" style={{ maxHeight: '400px', overflowY: 'auto', border: '1px solid #ccc' }}>
               <table className="table table-bordered table-striped text-center align-middle mb-0">
                 <thead className="table-dark">
@@ -438,7 +447,7 @@ const ingredData=healthIngredients.filter((item)=>Object.values(item).some((val)
                   </tr>
                 </thead>
                 <tbody>
-                  {oils.map((oil, index) => (
+                  {oil.map((oil, index) => (
                     <tr key={index}>
                       <td>{oil.name}</td>
                       <td>{oil.type}</td>
@@ -474,6 +483,11 @@ const ingredData=healthIngredients.filter((item)=>Object.values(item).some((val)
 
           {/* Right Column - Scrollable Table */}
           <div className="col-md-6 mb-4">
+             <input type="text" placeholder='search herb or botanical name...' 
+            className='form-control mb-3'
+            value={extractSearch}
+            onChange={(e)=>setExtractSearch(e.target.value)}
+            />
             <div
               className="table-responsive-scrlbar" style={{ maxHeight: '400px', overflowY: 'auto', border: '1px solid #ccc' }}
             >
@@ -485,7 +499,7 @@ const ingredData=healthIngredients.filter((item)=>Object.values(item).some((val)
                   </tr>
                 </thead>
                 <tbody>
-                  {extracts.map((extract, index) => (
+                  {extract.map((extract, index) => (
                     <tr key={index}>
                       <td>{extract.name}</td>
                       <td>{extract.specification}</td>

@@ -647,8 +647,17 @@ ul {
     border-radius: unset;
   }
 
+  .main-about .about-title {
+    text-align: center;
+  }
+  .read-more-btn {
+    display: flex !important;
+    justify-content: center;
+  }
+
   .contact_field {
     padding: 20px;
+    text-align: center;
   }
 
   .navbar-container {

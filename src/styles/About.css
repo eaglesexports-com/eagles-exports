@@ -1,0 +1,69 @@
+.why-section {
+  background-color: #f9fafc;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #222;
+}
+
+.section-title span {
+  color: #5294ea; /* Highlight color */
+}
+
+.why-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.why-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.icon {
+  font-size: 3rem;
+}
+
+.icon.green {
+  color: #28a745;
+}
+
+.icon.blue {
+  color: #007bff;
+}
+
+.icon.orange {
+  color: #fd7e14;
+}
+
+.icon.yellow {
+  color: #ffc107;
+}
+
+.why-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.why-desc {
+  font-size: 0.95rem;
+  color: #555;
+  margin-top: 10px;
+  line-height: 1.6;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 767px) {
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .why-card {
+    padding: 20px;
+  }
+}
